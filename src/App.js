@@ -1,10 +1,13 @@
 
 import Input from './components/Input';
+import Style from './App.css'
 import Button from './components/Button';
 import EqualsButton from './components/EqualsButton';
 
+
 import { Container, Content, Row } from './styles';
 import { useState } from 'react';
+import ButtonGrey from './components/ButtonGrey';
 
 
 const App = () => {
@@ -106,32 +109,33 @@ const App = () => {
 
   }
   return (
-    <Container>
+    <Container style={Style}>
       <Content>
         <Input value={currentNumber}/>
         <Row>
-          <Button label="x" onClick={handleMultiply}/>
-          <Button label="/" onClick={handleDivide}/>
-          <Button label="c" onClick={handleOnClear}/>
-          <Button label="." onClick={handleAddDecimal}/>
+        
+          <ButtonGrey label="x" onClick={handleMultiply} />
+          <ButtonGrey label="/" onClick={handleDivide} />
+          <Button label="C" onClick={handleOnClear}/>
+          <ButtonGrey label="." onClick={handleAddDecimal} />
         </Row>
         <Row>
           <Button label="7" onClick={() => handleAddNumber('7')}/>
           <Button label="8" onClick={() => handleAddNumber('8')}/>
           <Button label="9" onClick={() => handleAddNumber('9')}/>
-          <Button label="-" onClick={handleMinusNumbers}/>
+          <ButtonGrey label="-" onClick={handleMinusNumbers} />
         </Row>
         <Row>
           <Button label="4" onClick={() => handleAddNumber('4')}/>
           <Button label="5" onClick={() => handleAddNumber('5')}/>
           <Button label="6" onClick={() => handleAddNumber('6')}/>
-          <Button label="+" onClick={handleSumNumbers}/>
+          <ButtonGrey label="+" onClick={handleSumNumbers} />
         </Row>
         <Row>
           <Button label="1" onClick={() => handleAddNumber('1')}/>
           <Button label="2" onClick={() => handleAddNumber('2')}/>
           <Button label="3" onClick={() => handleAddNumber('3')}/>
-          <EqualsButton onClick={handleEquals}>=</EqualsButton>
+          <EqualsButton label="=" onClick={handleEquals}></EqualsButton>
         </Row>
       </Content>
     </Container>

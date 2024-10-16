@@ -5,8 +5,10 @@ export const ButtonContainer = styled.button`
     background-color: #000;
     color: #FFFFFF;
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
+    font-family: 'Poppins';
     border-radius: 15px;
+    cursor: pointer;
     flex: 1;
     
     &:hover {

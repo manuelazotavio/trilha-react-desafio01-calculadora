@@ -7,10 +7,11 @@ export const InputContainer = styled.div`
 
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
 
     font-size: 24px;
-    font-family: 'Roboto';
+    font-family: 'Poppins';
+  
     border-radius: 15px;
     
 
@@ -22,10 +23,11 @@ export const InputContainer = styled.div`
         display: flex;
         border-radius: 15px;
         flex-direction: column;
-        align-items: flex-end;
-        padding: 0 10px;
-        font-size: 24px;
-        font-family: 'Roboto';
+        align-items: flex-start;
+        padding: 0 20px;
+        font-size: 30px;
+        font-family: 'Poppins';
+        font-weight: 800;
         color: #FFFFFF;
     }
 `
