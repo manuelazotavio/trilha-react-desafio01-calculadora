@@ -9,3 +9,9 @@ input{
     font-family: 'Poppins';
     font-weight: 900;
 }
+
+@media (max-width: 768px) {
+    .content {
+        width: 238px;
+    }
+}

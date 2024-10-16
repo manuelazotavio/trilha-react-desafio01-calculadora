@@ -14,7 +14,6 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     background-color: #000;
-    width: 50%;
     border-radius: 15px
 `
 
@@ -32,6 +31,8 @@ export const Column = styled.div`
     justify-content: space-between;
     align-items: center;
     border-radius: 15px
+
+    
     
 `
 
