@@ -1,6 +1,7 @@
 
 import Input from './components/Input';
 import Button from './components/Button';
+import EqualsButton from './components/EqualsButton';
 
 import { Container, Content, Row } from './styles';
 import { useState } from 'react';
@@ -35,6 +36,40 @@ const App = () => {
 
   }
 
+  const handleAddDecimal = () => {
+    if (!currentNumber.includes('.')) {
+      setCurrentNumber(prev => prev + '.');
+    }
+  };
+  
+  const handleDivide = () => {
+
+    if(firstNumber === '0'){
+        setFirstNumber(String(currentNumber));
+        setCurrentNumber('0')
+        setOperation('/')
+    }else {
+      const divide = Number(firstNumber) / Number(currentNumber);
+      setCurrentNumber(String(divide))
+      setOperation('')
+    }
+
+  }
+
+  const handleMultiply = () => {
+
+    if(firstNumber === '0'){
+        setFirstNumber(String(currentNumber));
+        setCurrentNumber('0')
+        setOperation('x')
+    }else {
+      const mult = Number(firstNumber) * Number(currentNumber);
+      setCurrentNumber(String(mult))
+      setOperation('')
+    }
+
+  }
+
   const handleMinusNumbers = () => {
 
     if(firstNumber === '0'){
@@ -48,7 +83,6 @@ const App = () => {
     }
 
   }
-
   const handleEquals = () => {
 
     if(firstNumber !== '0' && operation !== '' && currentNumber !== '0'){
@@ -59,22 +93,27 @@ const App = () => {
           case '-':
             handleMinusNumbers();
             break;
+          case '/':
+            handleDivide();
+            break;
+          case 'x':
+            handleMultiply();
+            break;
           default: 
             break;
         }
     }
 
   }
-
   return (
     <Container>
       <Content>
         <Input value={currentNumber}/>
         <Row>
-          <Button label="x"/>
-          <Button label="/"/>
+          <Button label="x" onClick={handleMultiply}/>
+          <Button label="/" onClick={handleDivide}/>
           <Button label="c" onClick={handleOnClear}/>
-          <Button label="."/>
+          <Button label="." onClick={handleAddDecimal}/>
         </Row>
         <Row>
           <Button label="7" onClick={() => handleAddNumber('7')}/>
@@ -92,7 +131,7 @@ const App = () => {
           <Button label="1" onClick={() => handleAddNumber('1')}/>
           <Button label="2" onClick={() => handleAddNumber('2')}/>
           <Button label="3" onClick={() => handleAddNumber('3')}/>
-          <Button label="=" onClick={handleEquals}/>
+          <EqualsButton onClick={handleEquals}>=</EqualsButton>
         </Row>
       </Content>
     </Container>
